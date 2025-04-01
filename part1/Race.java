@@ -95,6 +95,25 @@ public class Race
                 TimeUnit.MILLISECONDS.sleep(100);
             }catch(Exception e){}
         }
+
+        if (raceWonBy(lane1Horse))
+        {
+            winner = lane1Horse;
+        }
+        else if (raceWonBy(lane2Horse))
+        {
+            winner = lane2Horse;
+        }
+        else if (raceWonBy(lane3Horse))
+        {
+            winner = lane3Horse;
+        }
+
+        System.out.println("The winner is " + winner.getName());
+
+        if (winner.equals(null)){
+            System.out.println("No winner");
+        }
     }
     
     /**
