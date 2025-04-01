@@ -30,58 +30,62 @@ public class Horse
             System.out.println("Horse class is ready.");
         }
     }
-    // to commit the changes
-    
     
     //Other methods of class Horse
     public void fall()
     {
-        
+        this.fallen = true;
     }
     
     public double getConfidence()
     {
-        
+        return this.horseConfidence;  
     }
     
     public int getDistanceTravelled()
     {
-        
+        return this.distanceTravelled;    
     }
     
     public String getName()
     {
-        
+        return this.horseName; 
     }
     
     public char getSymbol()
     {
-        
+        return this.horseSymbol;   
     }
     
     public void goBackToStart()
     {
-        
+        this.distanceTravelled = 0;
+        fallen = false;
     }
     
     public boolean hasFallen()
     {
-        
+        return this.fallen;  
     }
 
     public void moveForward()
     {
-        
+        this.distanceTravelled += 1;
     }
 
     public void setConfidence(double newConfidence)
     {
-        
+        if (newConfidence >= 0 && newConfidence <= 1) {
+            this.horseConfidence = newConfidence;
+        }
+        else{
+            System.out.println("Confidence level must be between 0 and 1.");
+        }
     }
     
     public void setSymbol(char newSymbol)
     {
-        
+        this.horseSymbol = newSymbol;  
     }
     
 }
