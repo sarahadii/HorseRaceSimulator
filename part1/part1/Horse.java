@@ -1,29 +1,36 @@
 package part1;
 
 /**
- * Write a description of class Horse here.
+ * Horse class represents each participant with a symbol, name, and confidence level.
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author (Sara Hadi) 
+ * @version (April 1)
  */
 public class Horse
 {
-    //Fields of class Horse
+    private String horseName;
+    private char horseSymbol;
+    private double horseConfidence;
+    private int distanceTravelled;
+    private boolean fallen;
+
     
     
       
     //Constructor of class Horse
-    /**
-     * Constructor for objects of class Horse
-     */
     public Horse(char horseSymbol, String horseName, double horseConfidence)
     {
-       
+        this.horseSymbol = horseSymbol;
+        this.horseName = horseName;
+        this.horseConfidence = horseConfidence;
+        this.fallen = false;
+        this.distanceTravelled = 0;
+        
         public static void main(String[] args) {
             System.out.println("Horse class is ready.");
         }
     }
-    
+    // to commit the changes
     
     
     //Other methods of class Horse
