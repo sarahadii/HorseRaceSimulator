@@ -96,6 +96,7 @@ public class Race
             }catch(Exception e){}
         }
 
+        //determine the winner
         if (raceWonBy(lane1Horse))
         {
             winner = lane1Horse;
