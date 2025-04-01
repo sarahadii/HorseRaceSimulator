@@ -1,4 +1,4 @@
-package part1;
+
 
 /**
  * Horse class represents each participant with a symbol, name, and confidence level.
@@ -25,12 +25,13 @@ public class Horse
         this.horseConfidence = horseConfidence;
         this.fallen = false;
         this.distanceTravelled = 0;
-        
-        public static void main(String[] args) {
-            System.out.println("Horse class is ready.");
-        }
     }
     
+    public static void main(String[] args) {
+        System.out.println("Horse class is ready.");
+    }    
+
+
     //Other methods of class Horse
     public void fall()
     {
