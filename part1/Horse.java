@@ -18,7 +18,7 @@ public class Horse
     
       
     //Constructor of class Horse
-    public Horse(char horseSymbol, String horseName, double horseConfidence)
+    public Horse(String horseName, char horseSymbol, double horseConfidence)
     {
         this.horseSymbol = horseSymbol;
         this.horseName = horseName;
@@ -27,6 +27,8 @@ public class Horse
         this.distanceTravelled = 0;
     }
     
+    // Removed redundant constructor
+
     public static void main(String[] args) {
         System.out.println("Horse class is ready.");
     }    

@@ -111,10 +111,6 @@ public class Race
         }
 
         System.out.println("The winner is " + winner.getName());
-
-        if (winner.equals(null)){
-            System.out.println("No winner");
-        }
     }
     
     /**
