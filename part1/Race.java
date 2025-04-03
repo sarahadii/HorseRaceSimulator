@@ -62,7 +62,7 @@ public class Race
      * then repeatedly moved forward until the 
      * race is finished
      */
-    public void startRace()
+    public void startRace() // issue - checking if a user forgets to add a horse to one of the lanes 
     {
         //declare a local variable to tell us when the race is finished
         boolean finished = false;
