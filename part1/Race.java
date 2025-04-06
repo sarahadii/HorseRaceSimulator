@@ -23,6 +23,11 @@ public class Race
      */
     public Race(int distance)
     {
+        // check that the distance is valid (greater than 0)
+        if (distance <= 0) {
+            System.out.println("Distance must be greater than 0");
+            return;
+        }
         // initialise instance variables
         raceLength = distance;
         lane1Horse = null;
@@ -70,7 +75,7 @@ public class Race
         // a new variable type horse to store the winner 
         Horse winner = null;
         //reset all the lanes (all horses not fallen and back to 0). 
-        //An issue might be that If a horse has not been added to a lane(null), it will result in a NullPointerException
+        //An issue might be that if a horse has not been added to a lane(null), it will result in a NullPointerException
         if (lane1Horse != null){
             lane1Horse.goBackToStart();
         }
