@@ -70,9 +70,17 @@ public class Race
         // a new variable type horse to store the winner 
         Horse winner = null;
         //reset all the lanes (all horses not fallen and back to 0). 
-        lane1Horse.goBackToStart();
-        lane2Horse.goBackToStart();
-        lane3Horse.goBackToStart();
+        //An issue might be that If a horse has not been added to a lane(null), it will result in a NullPointerException
+        if (lane1Horse != null){
+            lane1Horse.goBackToStart();
+        }
+        if (lane2Horse != null){
+            lane2Horse.goBackToStart();
+        }
+        if (lane3Horse != null){
+            lane3Horse.goBackToStart();
+        }
+        
                       
         while (!finished)
         {
