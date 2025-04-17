@@ -90,4 +90,9 @@ public class Horse
         this.horseSymbol = newSymbol;  
     }
     
+    public void setName(String newName) // testing the vcommit 
+    {
+        this.horseName = newName;  
+    }
+    
 }
