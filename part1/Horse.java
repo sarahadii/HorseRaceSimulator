@@ -15,7 +15,6 @@ public class Horse
     private boolean fallen;
 
     
-    
       
     //Constructor of class Horse
     public Horse(String horseName, char horseSymbol, double horseConfidence)
@@ -27,11 +26,11 @@ public class Horse
         this.distanceTravelled = 0;
     }
     
-    // Removed redundant constructor
+
 
     public static void main(String[] args) {
-        System.out.println("Horse class is ready.");
-    }    
+       System.out.println("Horse class is ready.");
+    }
 
 
     //Other methods of class Horse
@@ -89,6 +88,11 @@ public class Horse
     public void setSymbol(char newSymbol)
     {
         this.horseSymbol = newSymbol;  
+    }
+    
+    public void setName(String newName) // testing the vcommit 
+    {
+        this.horseName = newName;  
     }
     
 }
