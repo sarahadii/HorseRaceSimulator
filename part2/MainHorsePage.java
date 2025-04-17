@@ -16,7 +16,6 @@ public class MainHorsePage extends JFrame {
         JPanel buttonPanel = new JPanel(grid);
 
         JButton trackDesignButton = new JButton("Track Design");
-        trackDesignButton.setBackground(Color.PINK);
         trackDesignButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening Track design");
             new TrackDesign();
@@ -26,10 +25,29 @@ public class MainHorsePage extends JFrame {
 
         JButton horseCustbutton = new JButton("Customize your horse");
         horseCustbutton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "Customize horse");
+            JOptionPane.showMessageDialog(null, "Opening customize horse");
             new horseCustbutton();
         });
         buttonPanel.add(horseCustbutton);
+        add(buttonPanel , BorderLayout.CENTER);
+
+        JButton statsButton = new JButton("Statistics and Analytics");
+        horseCustbutton.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Opening statistics");
+            new statsButton();
+        });
+        buttonPanel.add(statsButton);
+        add(buttonPanel , BorderLayout.CENTER);
+
+        buttonPanel.add(horseCustbutton);
+        add(buttonPanel , BorderLayout.CENTER);
+
+        JButton bettingButton = new JButton("Betting system");
+        horseCustbutton.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Opening betting system");
+            new bettingButton();
+        });
+        buttonPanel.add(bettingButton);
         add(buttonPanel , BorderLayout.CENTER);
     }
 
