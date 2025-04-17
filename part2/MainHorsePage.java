@@ -8,7 +8,22 @@ public class MainHorsePage extends JFrame {
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout());
+
+        JLabel titJLabel = new JLabel("Horse Race Simulator" , SwingConstants.CENTER);
+        add(titJLabel , BorderLayout.NORTH);
+
+        GridLayout grid = new GridLayout(4,1,10 , 10 );
+        JPanel buttonPanel = new JPanel(grid);
+
+        JButton trackDesignButton = new JButton("Track Design");
+        trackDesignButton.addActionListener(e -> {
+            JOptionPane.showMessageDialog(null, "Opening Track design");
+            new TrackDesign();
+        });
+        buttonPanel.add(trackDesignButton);
+        add(buttonPanel , BorderLayout.CENTER);
     }
+
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
