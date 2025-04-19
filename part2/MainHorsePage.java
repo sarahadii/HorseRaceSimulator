@@ -22,28 +22,25 @@ public class MainHorsePage extends JFrame {
         });
         buttonPanel.add(trackDesignButton);
 
-        JButton horseCustbutton = new JButton("Customize your horse");
-        horseCustbutton.addActionListener(e -> {
+        JButton customizeButton = new JButton("Customize your horse");
+        customizeButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening customize horse");
-            horseCustbutton frame = new horseCustbutton(); 
-            frame.setVisible(true); 
+            horseCustbutton frame = new horseCustbutton();
+            frame.setVisible(true);
         });
-        buttonPanel.add(horseCustbutton);
+        buttonPanel.add(customizeButton);
 
 
         JButton statsButton = new JButton("Statistics and Analytics");
-        horseCustbutton.addActionListener(e -> {
+        statsButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening statistics");
             new statsButton();
         });
         buttonPanel.add(statsButton);
-        
-
-        buttonPanel.add(horseCustbutton);
-        
+    
 
         JButton bettingButton = new JButton("Betting system");
-        horseCustbutton.addActionListener(e -> {
+        statsButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening betting system");
             new bettingButton();
         });
