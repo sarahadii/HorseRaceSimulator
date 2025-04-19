@@ -3,11 +3,13 @@ package part2;
 import java.awt.BorderLayout;
 import java.awt.Container;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
@@ -18,6 +20,7 @@ public class TrackDesign extends JFrame{
     JSlider laneSlider;
     JComboBox<String> shapeBox;
     JTextArea preview; 
+    ButtonGroup conditionGroup;
     
     public TrackDesign(){
         setTitle("Track Design");
@@ -58,8 +61,31 @@ public class TrackDesign extends JFrame{
         shapeBox = new JComboBox<>(shapes);
         shapePanel.add(shapeLabel, BorderLayout.WEST);
         shapePanel.add(shapeBox, BorderLayout.CENTER);
-        centerPanel.add(shapePanel, BorderLayout.NORTH);
+        centerPanel.add(shapePanel, BorderLayout.SOUTH);
 
+        JPanel conditionPanel = new JPanel(new BorderLayout());
+        JLabel conditionLabel = new JLabel("Condition of the track:");
+        conditionGroup = new ButtonGroup();
+        JRadioButton dryButton = new JRadioButton("Dry");
+        JRadioButton wetButton = new JRadioButton("Wet");
+        JRadioButton muddyButton = new JRadioButton("Muddy");
+        JRadioButton snowyButton = new JRadioButton("Snowy");
+        JRadioButton icyButton = new JRadioButton("Icy");
+
+        conditionGroup.add(dryButton);
+        conditionGroup.add(wetButton);
+        conditionGroup.add(muddyButton);
+        conditionGroup.add(snowyButton);
+        conditionGroup.add(icyButton);
+        
+        conditionPanel.add(conditionLabel, BorderLayout.WEST);
+        conditionPanel.add(dryButton, BorderLayout.CENTER);
+        conditionPanel.add(wetButton, BorderLayout.SOUTH);
+        conditionPanel.add(muddyButton, BorderLayout.EAST);
+        conditionPanel.add(snowyButton, BorderLayout.NORTH);
+        conditionPanel.add(icyButton, BorderLayout.WEST);
+        
+        centerPanel.add(conditionPanel, BorderLayout.SOUTH);
 
     }
 
