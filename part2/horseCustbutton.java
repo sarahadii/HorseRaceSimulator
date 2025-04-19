@@ -75,9 +75,9 @@ public class horseCustbutton extends JFrame {
         String[] accs = {"Saddle", "Regular horseshoe", "Lightweight horseshoe", "Bridle", "Hat"};
         accessories = new JComboBox<>(accs);
         
-        accLabel.add(conditionLabel, BorderLayout.WEST);
+        accPanel.add(accLabel, BorderLayout.WEST);
         accPanel.add(accessories, BorderLayout.CENTER);
-        centerPanel.add(accPanel, BorderLayout.SOUTH);
+        centerPanel.add(accPanel);
 
     }
         
