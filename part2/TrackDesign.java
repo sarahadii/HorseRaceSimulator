@@ -21,7 +21,7 @@ public class TrackDesign extends JFrame{
     
     public TrackDesign(){
         setTitle("Track Design");
-        setSize(600,700);
+        setSize(700,700);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
@@ -41,6 +41,17 @@ public class TrackDesign extends JFrame{
         JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.add(lengthPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
+
+        JPanel lanePanel = new JPanel(new BorderLayout());
+        JLabel laneLabel = new JLabel("Number of lanes:");
+        laneSlider = new JSlider(1, 8, 4);
+        laneSlider.setMajorTickSpacing(1);
+        laneSlider.setMinorTickSpacing(1);
+        lanePanel.add(laneLabel, BorderLayout.WEST);
+        lanePanel.add(laneSlider, BorderLayout.CENTER);
+        laneSlider.setPaintTicks(true);
+        centerPanel.add(lanePanel, BorderLayout.CENTER);
+
 
     }
 
