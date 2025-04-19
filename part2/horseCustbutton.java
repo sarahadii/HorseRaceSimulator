@@ -26,7 +26,7 @@ public class horseCustbutton extends JFrame {
         setLayout(new BorderLayout()); 
 
         JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridLayout(5, 1, 10, 10));
+        centerPanel.setLayout(new GridLayout(6, 1, 10, 10));
         centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
         JPanel breedPanel = new JPanel();
@@ -98,6 +98,7 @@ public class horseCustbutton extends JFrame {
         appaloosa.addActionListener(e -> {
             attArea.setText("Appaloosa\nSpeed: +5\nConfidence: +10");
         });
+        
         add(centerPanel, BorderLayout.CENTER);
     }
         

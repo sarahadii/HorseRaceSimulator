@@ -26,7 +26,8 @@ public class MainHorsePage extends JFrame {
         JButton horseCustbutton = new JButton("Customize your horse");
         horseCustbutton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening customize horse");
-            new horseCustbutton();
+            horseCustbutton frame = new horseCustbutton(); 
+            frame.setVisible(true); 
         });
         buttonPanel.add(horseCustbutton);
         add(buttonPanel , BorderLayout.CENTER);
