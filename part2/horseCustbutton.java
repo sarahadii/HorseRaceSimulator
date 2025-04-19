@@ -85,6 +85,20 @@ public class horseCustbutton extends JFrame {
         attArea.setWrapStyleWord(true);
         attArea.setBorder(BorderFactory.createTitledBorder("Attributes Impact"));
         centerPanel.add(attArea);
+
+        arabian.addActionListener(e -> {
+            attArea.setText("Arabian\nSpeed: +10\nConfidence: +15");
+        });
+        thoroughbred.addActionListener(e -> {
+            attArea.setText("Thoroughbred\nSpeed: +15\nConfidence: +10");
+        });
+        quarterHorse.addActionListener(e -> {
+            attArea.setText("Quarter Horse\nSpeed: +5\nConfidence: +20");
+        });
+        appaloosa.addActionListener(e -> {
+            attArea.setText("Appaloosa\nSpeed: +5\nConfidence: +10");
+        });
+        add(centerPanel, BorderLayout.CENTER);
     }
         
     public static void main(String[] args) {
