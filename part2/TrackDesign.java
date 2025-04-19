@@ -2,7 +2,9 @@ package part2;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.GridLayout;
 
+import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
 import javax.swing.JComboBox;
 import javax.swing.JComponent;
@@ -30,6 +32,13 @@ public class TrackDesign extends JFrame{
         setLayout(new BorderLayout());
         setVisible(true);
 
+        JLabel title = new JLabel(" Track Design", SwingConstants.CENTER);
+        add(title, BorderLayout.NORTH);
+        
+        JPanel centerPanel = new JPanel();
+        centerPanel.setLayout(new GridLayout(5, 1, 10, 10));
+        centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
         JPanel lengthPanel = new JPanel(new BorderLayout());
         JLabel lengthLabel = new JLabel("Length of the track (in meters):");
         lengthSlider = new JSlider(100, 1000, 500);
@@ -41,7 +50,6 @@ public class TrackDesign extends JFrame{
         lengthSlider.setPaintTicks(true);
         lengthSlider.setPaintTicks(true);
 
-        JPanel centerPanel = new JPanel(new BorderLayout());
         centerPanel.add(lengthPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
 
@@ -56,37 +64,30 @@ public class TrackDesign extends JFrame{
         centerPanel.add(lanePanel, BorderLayout.CENTER);
 
         JPanel conPanel = new JPanel(new BorderLayout());
-        JLabel condition = new JLabel("Condition of the track:");
+        JLabel conditionLabel = new JLabel("Condition of the track:");
         String[] shapes = {"Dry", "Wet", "Muddy", "Snowy", "Icy"};
         condition = new JComboBox<>(shapes);
-        conPanel.add(condition, BorderLayout.WEST);
+        conPanel.add(conditionLabel, BorderLayout.WEST);
         conPanel.add(condition, BorderLayout.CENTER);
         centerPanel.add(conPanel, BorderLayout.SOUTH);
 
-        JPanel conditionPanel = new JPanel(new BorderLayout());
-        JLabel conditionLabel = new JLabel("Condition of the track:");
-        conditionGroup = new ButtonGroup();
-        JRadioButton dryButton = new JRadioButton("Dry");
-        JRadioButton wetButton = new JRadioButton("Wet");
-        JRadioButton muddyButton = new JRadioButton("Muddy");
-        JRadioButton snowyButton = new JRadioButton("Snowy");
-        JRadioButton icyButton = new JRadioButton("Icy");
+        JPanel shapePanel = new JPanel();
+        JLabel shapeLabel = new JLabel("Shape of the track:");
+        shapePanel.add(shapeLabel,BorderLayout.WEST);
+        shapeGroup = new ButtonGroup();
+        JRadioButton ovalButton = new JRadioButton("Oval");
+        JRadioButton f8Button = new JRadioButton("Figure-eight");
+        JRadioButton straightButton = new JRadioButton("Straight");
+    
+        shapeGroup = new ButtonGroup();
+        shapeGroup.add(ovalButton);
+        shapeGroup.add(f8Button);
+        shapeGroup.add(straightButton);
 
-        conditionGroup.add(dryButton);
-        conditionGroup.add(wetButton);
-        conditionGroup.add(muddyButton);
-        conditionGroup.add(snowyButton);
-        conditionGroup.add(icyButton);
-        
-        conditionPanel.add(conditionLabel, BorderLayout.WEST);
-        conditionPanel.add(dryButton, BorderLayout.CENTER);
-        conditionPanel.add(wetButton, BorderLayout.SOUTH);
-        conditionPanel.add(muddyButton, BorderLayout.EAST);
-        conditionPanel.add(snowyButton, BorderLayout.NORTH);
-        conditionPanel.add(icyButton, BorderLayout.WEST);
-        
-        centerPanel.add(conditionPanel, BorderLayout.SOUTH);
-
+        shapePanel.add(ovalButton);
+        shapePanel.add(f8Button);
+        shapePanel.add(straightButton);
+        centerPanel.add(shapePanel, BorderLayout.CENTER);
     }
 
     public static void main(String[] args) {
