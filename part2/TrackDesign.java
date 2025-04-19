@@ -1,10 +1,16 @@
 package part2;
 
 import java.awt.BorderLayout;
+import java.awt.Container;
+
 import javax.swing.JComboBox;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.JSlider;
 import javax.swing.JTextArea;
+import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
 public class TrackDesign extends JFrame{
@@ -15,11 +21,27 @@ public class TrackDesign extends JFrame{
     
     public TrackDesign(){
         setTitle("Track Design");
-        setSize(600,400);
+        setSize(600,700);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
         setVisible(true);
+
+        JPanel lengthPanel = new JPanel(new BorderLayout());
+        JLabel lengthLabel = new JLabel("Length of the track (in meters):");
+        lengthSlider = new JSlider(100, 1000, 500);
+        lengthSlider.setMajorTickSpacing(100);
+        lengthSlider.setMinorTickSpacing(10);
+
+        lengthPanel.add(lengthLabel, BorderLayout.WEST);
+        lengthPanel.add(lengthSlider, BorderLayout.CENTER);
+        lengthSlider.setPaintTicks(true);
+        lengthSlider.setPaintTicks(true);
+
+        JPanel centerPanel = new JPanel(new BorderLayout());
+        centerPanel.add(lengthPanel, BorderLayout.NORTH);
+        add(centerPanel, BorderLayout.CENTER);
+
     }
 
     public static void main(String[] args) {
