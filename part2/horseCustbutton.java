@@ -6,15 +6,18 @@ import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
 public class horseCustbutton extends JFrame {
     Button breedButton;
-    // combo box color,symbol text ,combo box accessories, attributes
+    JComboBox<String> horseColor;
+    //symbol  ,combo box accessories, attributes
     public horseCustbutton() {
         setTitle("Horse Customization");
         setSize(700, 600);
@@ -46,6 +49,26 @@ public class horseCustbutton extends JFrame {
         breedPanel.add(appaloosa);
         centerPanel.add(breedPanel, BorderLayout.SOUTH);
         add(centerPanel, BorderLayout.CENTER);
+
+        JPanel colorPanel = new JPanel(new BorderLayout());
+        JLabel conditionLabel = new JLabel("Color of the horse:");
+        String[] colors = {"Black", "Brown", "White", "Grey", "Cream", "Chestnut"};
+        horseColor = new JComboBox<>(colors);
+        
+        colorPanel.add(conditionLabel, BorderLayout.WEST);
+        colorPanel.add(horseColor, BorderLayout.CENTER);
+        centerPanel.add(colorPanel, BorderLayout.SOUTH);
+
+        JPanel symbolPanel = new JPanel();
+        JLabel symbolLabel = new JLabel("Horse's symbol:");
+        JTextArea symbolArea = new JTextArea(3,5);
+        symbolArea.setLineWrap(true);
+        symbolArea.setWrapStyleWord(true);
+        symbolArea.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
+        
+        symbolPanel.add(symbolLabel, BorderLayout.WEST);
+        symbolPanel.add(symbolArea, BorderLayout.CENTER);
+        centerPanel.add(symbolPanel, BorderLayout.SOUTH);
 
     }
         
