@@ -52,6 +52,14 @@ public class TrackDesign extends JFrame{
         laneSlider.setPaintTicks(true);
         centerPanel.add(lanePanel, BorderLayout.CENTER);
 
+        JPanel shapePanel = new JPanel(new BorderLayout());
+        JLabel shapeLabel = new JLabel("Shape of the track:");
+        String[] shapes = {"Oval", "Rectangular", "Circular"};
+        shapeBox = new JComboBox<>(shapes);
+        shapePanel.add(shapeLabel, BorderLayout.WEST);
+        shapePanel.add(shapeBox, BorderLayout.CENTER);
+        centerPanel.add(shapePanel, BorderLayout.NORTH);
+
 
     }
 
