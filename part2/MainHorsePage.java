@@ -21,7 +21,6 @@ public class MainHorsePage extends JFrame {
             new TrackDesign();
         });
         buttonPanel.add(trackDesignButton);
-        add(buttonPanel , BorderLayout.CENTER);
 
         JButton horseCustbutton = new JButton("Customize your horse");
         horseCustbutton.addActionListener(e -> {
@@ -30,7 +29,7 @@ public class MainHorsePage extends JFrame {
             frame.setVisible(true); 
         });
         buttonPanel.add(horseCustbutton);
-        add(buttonPanel , BorderLayout.CENTER);
+
 
         JButton statsButton = new JButton("Statistics and Analytics");
         horseCustbutton.addActionListener(e -> {
@@ -38,10 +37,10 @@ public class MainHorsePage extends JFrame {
             new statsButton();
         });
         buttonPanel.add(statsButton);
-        add(buttonPanel , BorderLayout.CENTER);
+        
 
         buttonPanel.add(horseCustbutton);
-        add(buttonPanel , BorderLayout.CENTER);
+        
 
         JButton bettingButton = new JButton("Betting system");
         horseCustbutton.addActionListener(e -> {
@@ -49,7 +48,8 @@ public class MainHorsePage extends JFrame {
             new bettingButton();
         });
         buttonPanel.add(bettingButton);
-        add(buttonPanel , BorderLayout.CENTER);
+        
+        add(buttonPanel, BorderLayout.CENTER);
     }
 
 
