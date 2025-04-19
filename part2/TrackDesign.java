@@ -18,9 +18,9 @@ import javax.swing.SwingUtilities;
 public class TrackDesign extends JFrame{
     JSlider lengthSlider;
     JSlider laneSlider;
-    JComboBox<String> shapeBox;
+    JComboBox<String> condition;
     JTextArea preview; 
-    ButtonGroup conditionGroup;
+    ButtonGroup shapeGroup;
     
     public TrackDesign(){
         setTitle("Track Design");
@@ -55,13 +55,13 @@ public class TrackDesign extends JFrame{
         laneSlider.setPaintTicks(true);
         centerPanel.add(lanePanel, BorderLayout.CENTER);
 
-        JPanel shapePanel = new JPanel(new BorderLayout());
-        JLabel shapeLabel = new JLabel("Shape of the track:");
-        String[] shapes = {"Oval", "Rectangular", "Circular"};
-        shapeBox = new JComboBox<>(shapes);
-        shapePanel.add(shapeLabel, BorderLayout.WEST);
-        shapePanel.add(shapeBox, BorderLayout.CENTER);
-        centerPanel.add(shapePanel, BorderLayout.SOUTH);
+        JPanel conPanel = new JPanel(new BorderLayout());
+        JLabel condition = new JLabel("Condition of the track:");
+        String[] shapes = {"Dry", "Wet", "Muddy", "Snowy", "Icy"};
+        condition = new JComboBox<>(shapes);
+        conPanel.add(condition, BorderLayout.WEST);
+        conPanel.add(condition, BorderLayout.CENTER);
+        centerPanel.add(conPanel, BorderLayout.SOUTH);
 
         JPanel conditionPanel = new JPanel(new BorderLayout());
         JLabel conditionLabel = new JLabel("Condition of the track:");
