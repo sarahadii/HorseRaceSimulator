@@ -17,7 +17,7 @@ import javax.swing.SwingUtilities;
 public class horseCustbutton extends JFrame {
     Button breedButton;
     JComboBox<String> horseColor;
-    //symbol  ,combo box accessories, attributes
+    JComboBox<String> accessories;
     public horseCustbutton() {
         setTitle("Horse Customization");
         setSize(700, 600);
@@ -69,6 +69,15 @@ public class horseCustbutton extends JFrame {
         symbolPanel.add(symbolLabel, BorderLayout.WEST);
         symbolPanel.add(symbolArea, BorderLayout.CENTER);
         centerPanel.add(symbolPanel, BorderLayout.SOUTH);
+
+        JPanel accPanel = new JPanel(new BorderLayout());
+        JLabel accLabel = new JLabel("Accesserioze your horse:");
+        String[] accs = {"Saddle", "Regular horseshoe", "Lightweight horseshoe", "Bridle", "Hat"};
+        accessories = new JComboBox<>(accs);
+        
+        accLabel.add(conditionLabel, BorderLayout.WEST);
+        accPanel.add(accessories, BorderLayout.CENTER);
+        centerPanel.add(accPanel, BorderLayout.SOUTH);
 
     }
         
