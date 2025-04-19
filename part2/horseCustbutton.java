@@ -79,6 +79,12 @@ public class horseCustbutton extends JFrame {
         accPanel.add(accessories, BorderLayout.CENTER);
         centerPanel.add(accPanel);
 
+        JPanel buttonPanel = new JPanel();
+        JTextArea attArea = new JTextArea(5, 10);
+        attArea.setLineWrap(true);
+        attArea.setWrapStyleWord(true);
+        attArea.setBorder(BorderFactory.createTitledBorder("Attributes Impact"));
+        centerPanel.add(attArea);
     }
         
     public static void main(String[] args) {
