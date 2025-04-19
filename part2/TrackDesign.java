@@ -88,6 +88,11 @@ public class TrackDesign extends JFrame{
         shapePanel.add(f8Button);
         shapePanel.add(straightButton);
         centerPanel.add(shapePanel, BorderLayout.CENTER);
+
+        preview = new JTextArea();
+        preview.setEditable(false);
+        preview.setBorder(BorderFactory.createTitledBorder("Track Preview"));
+        centerPanel.add(preview, BorderLayout.CENTER);
     }
 
     public static void main(String[] args) {
