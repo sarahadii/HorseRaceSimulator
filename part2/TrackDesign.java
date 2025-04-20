@@ -5,6 +5,7 @@ import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -78,6 +79,9 @@ public class TrackDesign extends JFrame{
         JRadioButton straightButton = new JRadioButton("Straight");
     
         shapeGroup = new ButtonGroup();
+        ovalButton.setActionCommand("Oval");
+        f8Button.setActionCommand("Figure-eight");
+        straightButton.setActionCommand("Straight");
         shapeGroup.add(ovalButton);
         shapeGroup.add(f8Button);
         shapeGroup.add(straightButton);
@@ -91,6 +95,42 @@ public class TrackDesign extends JFrame{
         preview.setEditable(false);
         preview.setBorder(BorderFactory.createTitledBorder("Track Preview"));
         centerPanel.add(preview, BorderLayout.CENTER);
+
+        JPanel bottomPanel = new JPanel();
+        JButton previewBtn = new JButton("Preview");
+        previewBtn.addActionListener(e -> showPreview());
+        bottomPanel.add(previewBtn);
+
+        JButton saveBtn = new JButton("Save Track");
+        bottomPanel.add(saveBtn);
+        add(bottomPanel, BorderLayout.SOUTH);
+
+    }
+
+    private void showPreview() {
+        String shape = shapeGroup.getSelection() != null ? shapeGroup.getSelection().getActionCommand() : "None"; // vs copilot gave me this since getselectedItem didnt work
+        int length = lengthSlider.getValue();
+        int lanes = laneSlider.getValue();
+        String conditionValue = (String) condition.getSelectedItem();
+
+        String effect = "";
+        if (conditionValue.equals("Dry")) {
+            effect = "Fastest speed, high confidence";
+        } 
+        else if (conditionValue.equals("Wet")) {
+            effect = "Slightly reduced speed, slight fall risk";
+        } 
+        else if (conditionValue.equals("Muddy")) {
+            effect = "Lower speed, moderate fall risk";
+        } 
+        else if (conditionValue.equals("Snowy")) {
+            effect = "Low speed, moderate-high fall risk";
+        } 
+        else if (conditionValue.equals("Icy")) {
+            effect = "Very low speed, very high fall risk";
+        }
+
+        preview.setText("Shape: " + shape + "\nLength: " + length + " meters\nLanes: " + lanes + "\nCondition: " + conditionValue + "\nEffect: " + effect);
     }
 
     public static void main(String[] args) {
