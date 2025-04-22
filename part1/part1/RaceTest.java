@@ -1,3 +1,5 @@
+package part1;
+
 public class RaceTest {
     public static void main(String[] args) {
         Horse horse1 = new Horse("Horse1", '1', 0.8);

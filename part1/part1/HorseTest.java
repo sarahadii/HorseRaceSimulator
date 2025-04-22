@@ -1,3 +1,4 @@
+package part1;
 public class HorseTest {
     public static void main(String[] args) {
         Horse h = new Horse("Thunder", 'T', 0.75);

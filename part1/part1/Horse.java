@@ -1,5 +1,5 @@
 
-
+package part1;
 /**
  * Horse class represents each participant with a symbol, name, and confidence level.
  * 
