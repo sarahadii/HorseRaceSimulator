@@ -98,5 +98,11 @@ public class Horse
     {
         this.horseName = newName;  
     }
+    public String getColor() {
+        return this.color;
+    }
+    public String getBreed() {
+        return this.breed;
+    }
     
 }
