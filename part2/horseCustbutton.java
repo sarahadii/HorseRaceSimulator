@@ -14,10 +14,15 @@ import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
 import javax.swing.SwingUtilities;
 
+import part1.Horse; 
+
 public class horseCustbutton extends JFrame {
     Button breedButton;
     JComboBox<String> horseColor;
     JComboBox<String> accessories;
+    JTextArea symbolArea;
+    private JRadioButton arabian, thoroughbred, quarterHorse, appaloosa;
+
     public horseCustbutton() {
         setTitle("Horse Customization");
         setSize(700, 600);
@@ -32,10 +37,10 @@ public class horseCustbutton extends JFrame {
         JPanel breedPanel = new JPanel();
         JLabel breedLabel = new JLabel("Horse breed:");
         breedPanel.add(breedLabel,BorderLayout.WEST);
-        JRadioButton arabian  = new JRadioButton("Arabian");
-        JRadioButton thoroughbred = new JRadioButton("Thoroughbred");
-        JRadioButton quarterHorse = new JRadioButton("Quarter Horse");
-        JRadioButton appaloosa = new JRadioButton("Appaloosa");
+        arabian = new JRadioButton("Arabian");
+        thoroughbred = new JRadioButton("Thoroughbred");
+        quarterHorse = new JRadioButton("Quarter Horse");
+        appaloosa = new JRadioButton("Appaloosa");
 
         ButtonGroup breedGroup = new ButtonGroup();
         breedGroup.add(arabian);

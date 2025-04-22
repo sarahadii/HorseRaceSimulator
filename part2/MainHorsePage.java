@@ -1,7 +1,13 @@
 package part2;
 import javax.swing.*;
+
+import part1.Horse;
+
 import java.awt.*;
+import java.util.ArrayList;
 public class MainHorsePage extends JFrame {
+    Horse horse1;
+    private ArrayList<Horse> horses = new ArrayList<>();
 
     public MainHorsePage(){
         setTitle("Horse Race Simulator");

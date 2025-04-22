@@ -54,7 +54,7 @@ public class TrackDesign extends JFrame{
 
         JPanel lanePanel = new JPanel(new BorderLayout());
         JLabel laneLabel = new JLabel("Number of lanes:");
-        laneSlider = new JSlider(1, 8, 4);
+        laneSlider = new JSlider(1, 3, 2);
         laneSlider.setMajorTickSpacing(1);
         laneSlider.setMinorTickSpacing(1);
         lanePanel.add(laneLabel, BorderLayout.WEST);
