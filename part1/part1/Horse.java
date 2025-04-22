@@ -13,17 +13,21 @@ public class Horse
     private double horseConfidence;
     private int distanceTravelled;
     private boolean fallen;
+    private String color;
+    private String breed;
 
     
       
     //Constructor of class Horse
-    public Horse(String horseName, char horseSymbol, double horseConfidence)
+    public Horse(String horseName, char horseSymbol, double horseConfidence, String color, String breed)
     {
         this.horseSymbol = horseSymbol;
         this.horseName = horseName;
         this.horseConfidence = horseConfidence;
         this.fallen = false;
         this.distanceTravelled = 0;
+        this.color = color;
+        this.breed = breed;
     }
     
 
