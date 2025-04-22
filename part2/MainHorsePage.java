@@ -5,10 +5,7 @@ import part1.Horse;
 
 import java.awt.*;
 import java.util.ArrayList;
-public class MainHorsePage extends JFrame {
-    Horse horse1;
-    private ArrayList<Horse> horses = new ArrayList<>();
-
+public class MainHorsePage extends JFrame{
     public MainHorsePage(){
         setTitle("Horse Race Simulator");
         setSize(800, 600);
@@ -51,9 +48,8 @@ public class MainHorsePage extends JFrame {
             new bettingButton();
         });
         buttonPanel.add(bettingButton);
-        
-        add(buttonPanel, BorderLayout.CENTER);
     }
+
 
 
 

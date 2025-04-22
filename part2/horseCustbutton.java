@@ -6,6 +6,7 @@ import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -52,7 +53,7 @@ public class horseCustbutton extends JFrame {
         breedPanel.add(thoroughbred);
         breedPanel.add(quarterHorse);
         breedPanel.add(appaloosa);
-        centerPanel.add(breedPanel, BorderLayout.SOUTH);
+        centerPanel.add(breedPanel);
         add(centerPanel, BorderLayout.CENTER);
 
         JPanel colorPanel = new JPanel(new BorderLayout());
@@ -73,7 +74,7 @@ public class horseCustbutton extends JFrame {
         
         symbolPanel.add(symbolLabel, BorderLayout.WEST);
         symbolPanel.add(symbolArea, BorderLayout.CENTER);
-        centerPanel.add(symbolPanel, BorderLayout.SOUTH);
+        centerPanel.add(symbolPanel);
 
         JPanel accPanel = new JPanel(new BorderLayout());
         JLabel accLabel = new JLabel("Accesserioze your horse:");
@@ -105,6 +106,17 @@ public class horseCustbutton extends JFrame {
         });
         
         add(centerPanel, BorderLayout.CENTER);
+
+        JButton saveBtn = new JButton("Save Track");
+        saveBtn.addActionListener(e -> {
+            String breed = "";
+            if (arabian.isSelected()) breed = "Arabian";
+            else if (thoroughbred.isSelected()) breed = "Thoroughbred";
+            else if (quarterHorse.isSelected()) breed = "Quarter Horse";
+            else if (appaloosa.isSelected()) breed = "Appaloosa";
+            String color = (String) horseColor.getSelectedItem();
+        });
+        centerPanel.add(saveBtn);
     }
         
     public static void main(String[] args) {
