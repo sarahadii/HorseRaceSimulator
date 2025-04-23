@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextArea;
+import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
 
 import part1.Horse; 
@@ -23,6 +24,7 @@ public class horseCustbutton extends JFrame {
     JComboBox<String> accessories;
     JComboBox<String> symbolBox;
     private JRadioButton arabian, thoroughbred, quarterHorse, appaloosa;
+    private JTextField nameField;
 
     public horseCustbutton() {
         setTitle("Horse Customization");
@@ -105,7 +107,15 @@ public class horseCustbutton extends JFrame {
         
         add(centerPanel, BorderLayout.CENTER);
 
-        JButton saveBtn = new JButton("Save Track");
+        JPanel namePanel = new JPanel();
+        JLabel nameLabel = new JLabel("Horse Name:");
+        nameField = new JTextField(10);
+       
+        namePanel.add(nameLabel, BorderLayout.WEST);
+        namePanel.add(nameField, BorderLayout.CENTER);
+        centerPanel.add(namePanel, BorderLayout.SOUTH);
+
+        JButton saveBtn = new JButton("Save Horse");
         saveBtn.addActionListener(e -> {
             String breed = "";
             if (arabian.isSelected()) breed = "Arabian";
