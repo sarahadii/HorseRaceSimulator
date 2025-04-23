@@ -2,9 +2,11 @@ package part2;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -28,16 +30,16 @@ public class horseCustbutton extends JFrame {
 
     public horseCustbutton() {
         setTitle("Horse Customization");
-        setSize(700, 600);
+        setSize(950, 700);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout()); 
 
         JPanel centerPanel = new JPanel();
-        centerPanel.setLayout(new GridLayout(6, 1, 10, 10));
+        centerPanel.setLayout(new BoxLayout(centerPanel, BoxLayout.Y_AXIS));
         centerPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        JPanel breedPanel = new JPanel();
+        JPanel breedPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel breedLabel = new JLabel("Horse breed:");
         breedPanel.add(breedLabel,BorderLayout.WEST);
         arabian = new JRadioButton("Arabian");
@@ -58,7 +60,7 @@ public class horseCustbutton extends JFrame {
         centerPanel.add(breedPanel);
         add(centerPanel, BorderLayout.CENTER);
 
-        JPanel colorPanel = new JPanel(new BorderLayout());
+        JPanel colorPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel conditionLabel = new JLabel("Color of the horse:");
         String[] colors = {"Black", "Brown", "White", "Grey", "Cream", "Chestnut"};
         horseColor = new JComboBox<>(colors);
@@ -67,7 +69,7 @@ public class horseCustbutton extends JFrame {
         colorPanel.add(horseColor, BorderLayout.CENTER);
         centerPanel.add(colorPanel, BorderLayout.SOUTH);
 
-        JPanel symbolPanel = new JPanel();
+        JPanel symbolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel symbolLabel = new JLabel("Horse's symbol:");
         String[] symbols = {"🐎", "🔥", "⭐", "💨", "💎", "🐴", "🌟", "🌈", "💥", "⚡"};
         symbolBox = new JComboBox<>(symbols);
@@ -76,7 +78,7 @@ public class horseCustbutton extends JFrame {
         symbolPanel.add(symbolBox, BorderLayout.CENTER);
         centerPanel.add(symbolPanel);
 
-        JPanel accPanel = new JPanel(new BorderLayout());
+        JPanel accPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel accLabel = new JLabel("Accesserioze your horse:");
         String[] accs = {"Saddle", "Regular horseshoe", "Lightweight horseshoe", "Bridle", "Hat"};
         accessories = new JComboBox<>(accs);
@@ -85,7 +87,7 @@ public class horseCustbutton extends JFrame {
         accPanel.add(accessories, BorderLayout.CENTER);
         centerPanel.add(accPanel);
 
-        JPanel buttonPanel = new JPanel();
+        
         JTextArea attArea = new JTextArea(5, 10);
         attArea.setLineWrap(true);
         attArea.setWrapStyleWord(true);
@@ -107,7 +109,7 @@ public class horseCustbutton extends JFrame {
         
         add(centerPanel, BorderLayout.CENTER);
 
-        JPanel namePanel = new JPanel();
+        JPanel namePanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel nameLabel = new JLabel("Horse Name:");
         nameField = new JTextField(10);
        
@@ -115,8 +117,9 @@ public class horseCustbutton extends JFrame {
         namePanel.add(nameField, BorderLayout.CENTER);
         centerPanel.add(namePanel, BorderLayout.SOUTH);
 
-        JButton saveBtn = new JButton("Save Horse");
-        saveBtn.addActionListener(e -> {
+        JPanel savePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
+        Button saveBtn = null;
+            saveBtn.addActionListener(e -> {
             String breed = "";
             if (arabian.isSelected()) breed = "Arabian";
             else if (thoroughbred.isSelected()) breed = "Thoroughbred";
@@ -125,6 +128,9 @@ public class horseCustbutton extends JFrame {
             String color = (String) horseColor.getSelectedItem();
         });
         centerPanel.add(saveBtn);
+
+        savePanel.add(saveBtn);
+        centerPanel.add(savePanel);
     }
         
     public static void main(String[] args) {
