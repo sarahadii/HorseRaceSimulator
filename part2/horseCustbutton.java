@@ -21,7 +21,7 @@ public class horseCustbutton extends JFrame {
     Button breedButton;
     JComboBox<String> horseColor;
     JComboBox<String> accessories;
-    JTextArea symbolArea;
+    JComboBox<String> symbolBox;
     private JRadioButton arabian, thoroughbred, quarterHorse, appaloosa;
 
     public horseCustbutton() {
@@ -67,13 +67,11 @@ public class horseCustbutton extends JFrame {
 
         JPanel symbolPanel = new JPanel();
         JLabel symbolLabel = new JLabel("Horse's symbol:");
-        JTextArea symbolArea = new JTextArea(3,5);
-        symbolArea.setLineWrap(true);
-        symbolArea.setWrapStyleWord(true);
-        symbolArea.setBorder(BorderFactory.createLineBorder(java.awt.Color.BLACK));
+        String[] symbols = {"🐎", "🔥", "⭐", "💨", "💎", "🐴", "🌟", "🌈", "💥", "⚡"};
+        symbolBox = new JComboBox<>(symbols);
         
         symbolPanel.add(symbolLabel, BorderLayout.WEST);
-        symbolPanel.add(symbolArea, BorderLayout.CENTER);
+        symbolPanel.add(symbolBox, BorderLayout.CENTER);
         centerPanel.add(symbolPanel);
 
         JPanel accPanel = new JPanel(new BorderLayout());
