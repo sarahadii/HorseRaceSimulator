@@ -130,6 +130,13 @@ public class horseCustbutton extends JFrame {
             else if (quarterHorse.isSelected()) breed = "Quarter Horse";
             else if (appaloosa.isSelected()) breed = "Appaloosa";
             String color = (String) horseColor.getSelectedItem();
+            String symbol = (String) symbolBox.getSelectedItem();
+            String symbolStr = (String) symbolBox.getSelectedItem();
+            char symbolChar = symbolStr.charAt(0);
+            double confidence = getConfidenceFromBreed();
+            String name = nameField.getText();
+            
+            Horse horse = new Horse(name, symbolChar, confidence, color, breed);
         });
         savePanel.add(saveBtn);
         centerPanel.add(savePanel);
