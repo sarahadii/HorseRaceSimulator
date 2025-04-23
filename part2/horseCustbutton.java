@@ -2,6 +2,7 @@ package part2;
 
 import java.awt.BorderLayout;
 import java.awt.Button;
+import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
 
@@ -14,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
+import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.JTextField;
 import javax.swing.SwingUtilities;
@@ -88,11 +90,13 @@ public class horseCustbutton extends JFrame {
         centerPanel.add(accPanel);
 
         
-        JTextArea attArea = new JTextArea(2,3);
+        JTextArea attArea = new JTextArea(3, 10);
         attArea.setLineWrap(true);
         attArea.setWrapStyleWord(true);
         attArea.setBorder(BorderFactory.createTitledBorder("Attributes Impact"));
-        centerPanel.add(attArea);
+        JScrollPane attScrollPane = new JScrollPane(attArea);
+        attScrollPane.setPreferredSize(new Dimension(250, 60)); 
+        centerPanel.add(attScrollPane);
 
         arabian.addActionListener(e -> {
             attArea.setText("Arabian\nSpeed: +10\nConfidence: +15");
