@@ -43,14 +43,19 @@ public class MainHorsePage extends JFrame{
     
 
         JButton bettingButton = new JButton("Betting system");
-        statsButton.addActionListener(e -> {
+        bettingButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening betting system");
             new bettingButton();
         });
         buttonPanel.add(bettingButton);
+
+        buttonPanel.add(trackDesignButton);
+        buttonPanel.add(customizeButton);
+        buttonPanel.add(statsButton);
+        buttonPanel.add(bettingButton);
+
+        add(buttonPanel, BorderLayout.CENTER);
     }
-
-
 
 
     public static void main(String[] args) {
