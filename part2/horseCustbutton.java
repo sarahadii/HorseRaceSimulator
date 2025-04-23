@@ -61,21 +61,21 @@ public class horseCustbutton extends JFrame {
         add(centerPanel, BorderLayout.CENTER);
 
         JPanel colorPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
-        JLabel conditionLabel = new JLabel("Color of the horse:");
+        JLabel colorLabel = new JLabel("Color of the horse:");
         String[] colors = {"Black", "Brown", "White", "Grey", "Cream", "Chestnut"};
         horseColor = new JComboBox<>(colors);
         
-        colorPanel.add(conditionLabel, BorderLayout.WEST);
-        colorPanel.add(horseColor, BorderLayout.CENTER);
-        centerPanel.add(colorPanel, BorderLayout.SOUTH);
+        colorPanel.add(colorLabel);
+        colorPanel.add(horseColor);
+        centerPanel.add(colorPanel);
 
         JPanel symbolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel symbolLabel = new JLabel("Horse's symbol:");
         String[] symbols = {"🐎", "🔥", "⭐", "💨", "💎", "🐴", "🌟", "🌈", "💥", "⚡"};
         symbolBox = new JComboBox<>(symbols);
         
-        symbolPanel.add(symbolLabel, BorderLayout.WEST);
-        symbolPanel.add(symbolBox, BorderLayout.CENTER);
+        symbolPanel.add(symbolLabel);
+        symbolPanel.add(symbolBox);
         centerPanel.add(symbolPanel);
 
         JPanel accPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
@@ -83,12 +83,12 @@ public class horseCustbutton extends JFrame {
         String[] accs = {"Saddle", "Regular horseshoe", "Lightweight horseshoe", "Bridle", "Hat"};
         accessories = new JComboBox<>(accs);
         
-        accPanel.add(accLabel, BorderLayout.WEST);
-        accPanel.add(accessories, BorderLayout.CENTER);
+        accPanel.add(accLabel);
+        accPanel.add(accessories);
         centerPanel.add(accPanel);
 
         
-        JTextArea attArea = new JTextArea(5, 10);
+        JTextArea attArea = new JTextArea(2,3);
         attArea.setLineWrap(true);
         attArea.setWrapStyleWord(true);
         attArea.setBorder(BorderFactory.createTitledBorder("Attributes Impact"));
@@ -113,12 +113,12 @@ public class horseCustbutton extends JFrame {
         JLabel nameLabel = new JLabel("Horse Name:");
         nameField = new JTextField(10);
        
-        namePanel.add(nameLabel, BorderLayout.WEST);
-        namePanel.add(nameField, BorderLayout.CENTER);
-        centerPanel.add(namePanel, BorderLayout.SOUTH);
+        namePanel.add(nameLabel);
+        namePanel.add(nameField);
+        centerPanel.add(namePanel);
 
         JPanel savePanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
-        Button saveBtn = null;
+        JButton saveBtn = new JButton("Save Horse");
             saveBtn.addActionListener(e -> {
             String breed = "";
             if (arabian.isSelected()) breed = "Arabian";
@@ -127,10 +127,10 @@ public class horseCustbutton extends JFrame {
             else if (appaloosa.isSelected()) breed = "Appaloosa";
             String color = (String) horseColor.getSelectedItem();
         });
-        centerPanel.add(saveBtn);
-
         savePanel.add(saveBtn);
         centerPanel.add(savePanel);
+
+        add(centerPanel, BorderLayout.CENTER);
     }
         
     public static void main(String[] args) {
