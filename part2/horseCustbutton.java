@@ -5,6 +5,8 @@ import java.awt.Button;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.GridLayout;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.swing.BorderFactory;
 import javax.swing.BoxLayout;
@@ -133,26 +135,36 @@ public class horseCustbutton extends JFrame {
             String symbol = (String) symbolBox.getSelectedItem();
             String symbolStr = (String) symbolBox.getSelectedItem();
             char symbolChar = symbolStr.charAt(0);
-            double confidence = getConfidenceFromBreed();
-                        String name = nameField.getText();
+            double confidence = getConfidenceBreed();
+            String name = nameField.getText();
                         
-                        Horse horse = new Horse(name, symbolChar, confidence, color, breed);
-                    });
+            Horse horse = new Horse(name, symbolChar, confidence, color, breed);
+            System.out.println("Horse Name: " + horse.getName());
+            System.out.println("Horse Symbol: " + horse.getSymbol());
+            System.out.println("Horse Color: " + horse.getColor());
+            System.out.println("Horse Breed: " + horse.getBreed());
+            System.out.println("Horse Confidence: " + horse.getConfidence());
+
+            List<Horse> saveHorses = new ArrayList<>();
+            saveHorses.add(horse);
+            System.out.println("Horse saved successfully!");
+            });
                     savePanel.add(saveBtn);
                     centerPanel.add(savePanel);
             
                     add(centerPanel, BorderLayout.CENTER);
                 }
                     
-                private double getConfidenceFromBreed() {
+                private double getConfidenceBreed() {
                     if (arabian.isSelected()) return 0.85;
                     if (thoroughbred.isSelected()) return 0.90;
                     if (quarterHorse.isSelected()) return 0.80;
                     if (appaloosa.isSelected()) return 0.75;
+                    return 0;
                 }
             
-                public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
+        public static void main(String[] args) {
+            SwingUtilities.invokeLater(() -> {
             horseCustbutton frame = new horseCustbutton();
             frame.setVisible(true);
         });
