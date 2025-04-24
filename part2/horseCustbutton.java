@@ -134,17 +134,24 @@ public class horseCustbutton extends JFrame {
             String symbolStr = (String) symbolBox.getSelectedItem();
             char symbolChar = symbolStr.charAt(0);
             double confidence = getConfidenceFromBreed();
-            String name = nameField.getText();
+                        String name = nameField.getText();
+                        
+                        Horse horse = new Horse(name, symbolChar, confidence, color, breed);
+                    });
+                    savePanel.add(saveBtn);
+                    centerPanel.add(savePanel);
             
-            Horse horse = new Horse(name, symbolChar, confidence, color, breed);
-        });
-        savePanel.add(saveBtn);
-        centerPanel.add(savePanel);
-
-        add(centerPanel, BorderLayout.CENTER);
-    }
-        
-    public static void main(String[] args) {
+                    add(centerPanel, BorderLayout.CENTER);
+                }
+                    
+                private double getConfidenceFromBreed() {
+                    if (arabian.isSelected()) return 0.85;
+                    if (thoroughbred.isSelected()) return 0.90;
+                    if (quarterHorse.isSelected()) return 0.80;
+                    if (appaloosa.isSelected()) return 0.75;
+                }
+            
+                public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             horseCustbutton frame = new horseCustbutton();
             frame.setVisible(true);
