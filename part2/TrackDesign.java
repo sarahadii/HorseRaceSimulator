@@ -1,6 +1,6 @@
 package part2;
 
-import java.awt.BorderLayout;
+import java.awt.*;
 import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;

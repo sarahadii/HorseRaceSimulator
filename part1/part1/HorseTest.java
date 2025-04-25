@@ -1,7 +1,7 @@
 package part1;
 public class HorseTest {
     public static void main(String[] args) {
-        Horse h = new Horse("Thunder", 'T', 0.75);
+        Horse h = new Horse("Thunder", 'T', 0.75, null, null);
         System.out.println("Horse Name: " + h.getName());
         System.out.println("Horse Symbol: " + h.getSymbol());
         System.out.println("Horse Confidence: " + h.getConfidence());
