@@ -34,6 +34,8 @@ public class Race
         lane2Horse = null;
         lane3Horse = null;
         this.numberOfLanes = numberOfLanes;
+        this.trackCondition = trackCondition;
+        this.trackShape = trackShape;
     }
     
     /**

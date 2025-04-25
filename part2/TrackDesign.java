@@ -1,7 +1,6 @@
 package part2;
 
 import java.awt.*;
-import java.awt.GridLayout;
 
 import javax.swing.BorderFactory;
 import javax.swing.ButtonGroup;
@@ -9,6 +8,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JSlider;
@@ -104,6 +104,20 @@ public class TrackDesign extends JFrame{
         JButton saveBtn = new JButton("Save Track");
         bottomPanel.add(saveBtn);
         add(bottomPanel, BorderLayout.SOUTH);
+
+        saveBtn.addActionListener(e -> {
+            int length = lengthSlider.getValue();
+            int lanes = laneSlider.getValue();
+            String shape = shapeGroup.getSelection() != null ? shapeGroup.getSelection().getActionCommand() : "None";
+            String conditionValue = (String) condition.getSelectedItem();
+            String message = "Track saved with the following details:\n" +
+                    "Length: " + length + " meters\n" +
+                    "Lanes: " + lanes + "\n" +
+                    "Shape: " + shape + "\n" +
+                    "Condition: " + conditionValue;
+            JOptionPane.showMessageDialog(this, message, "Track Saved", JOptionPane.INFORMATION_MESSAGE);
+        });
+        add(centerPanel, BorderLayout.CENTER);
 
     }
 
