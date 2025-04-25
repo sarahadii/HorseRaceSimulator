@@ -16,6 +16,9 @@ public class Race
     private Horse lane1Horse;
     private Horse lane2Horse;
     private Horse lane3Horse;
+    private int numberOfLanes;
+    private String trackCondition;
+    private String trackShape;
 
     /**
      * Constructor for objects of class Race
@@ -23,18 +26,14 @@ public class Race
      * 
      * @param distance the length of the racetrack (in metres/yards...)
      */
-    public Race(int distance)
+    public Race(int distance, String trackCondition, String trackShape,int numberOfLanes )
     {
-        // check that the distance is valid (greater than 0)
-        if (distance <= 0) {
-            System.out.println("Distance must be greater than 0");
-            return;
-        }
         // initialise instance variables
         raceLength = distance;
         lane1Horse = null;
         lane2Horse = null;
         lane3Horse = null;
+        this.numberOfLanes = numberOfLanes;
     }
     
     /**
@@ -43,23 +42,17 @@ public class Race
      * @param theHorse the horse to be added to the race
      * @param laneNumber the lane that the horse will be added to
      */
-    public void addHorse(Horse theHorse, int laneNumber)
-    {
-        if (laneNumber == 1)
-        {
-            lane1Horse = theHorse;
-        }
-        else if (laneNumber == 2)
-        {
-            lane2Horse = theHorse;
-        }
-        else if (laneNumber == 3)
-        {
-            lane3Horse = theHorse;
-        }
-        else
-        {
-            System.out.println("Cannot add horse to lane " + laneNumber + " because there is no such lane");
+    public void addHorse(Horse theHorse, int laneNumber){
+        if (laneNumber > 0 && laneNumber <= numberOfLanes) {
+            if (laneNumber == 1) {
+                lane1Horse = theHorse;
+            } else if (laneNumber == 2) {
+                lane2Horse = theHorse;
+            } else if (laneNumber == 3) {
+                lane3Horse = theHorse;
+            }
+        } else {
+            System.out.println("Cannot add horse to lane " + laneNumber + " because there is no such lane. Total lanes: " + numberOfLanes);
         }
     }
     
@@ -71,6 +64,9 @@ public class Race
      */
     public void startRace() // issue - checking if a user forgets to add a horse to one of the lanes 
     {
+        // Print the track condition at the start of the race
+        System.out.println("Track condition: " + trackCondition);
+
         //declare a local variable to tell us when the race is finished
         boolean finished = false;
         
