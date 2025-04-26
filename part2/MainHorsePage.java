@@ -38,7 +38,9 @@ public class MainHorsePage extends JFrame{
         JButton statsButton = new JButton("Statistics and Analytics");
         statsButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening statistics");
-            new statsButton(null, null, null, getDefaultCloseOperation(), null);
+            Horse dummyHorse = new Horse("Dummy", '!', 0.8, "Brown", "Thoroughbred");
+            statsButton stats = new statsButton(dummyHorse, dummyHorse, dummyHorse, 500, dummyHorse);
+            stats.setVisible(true);
         });
         buttonPanel.add(statsButton);
     

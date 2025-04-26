@@ -146,7 +146,7 @@ public class horseCustbutton extends JFrame {
             System.out.println("Horse Breed: " + horse.getBreed());
             System.out.println("Horse Confidence: " + horse.getConfidence());
 
-            savedHorses.add(horse);
+            
             System.out.println("Horse saved successfully!");
             });
                     savePanel.add(saveBtn);
