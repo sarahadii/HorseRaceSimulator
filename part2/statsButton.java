@@ -11,6 +11,23 @@ public class statsButton extends JFrame {
         setSize(800, 600);
         setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         
+        JPanel panel = new JPanel();
+        panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
+        panel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
+
+        panel.add(createPanel(lane1Horse, raceLength));
+        panel.add(createPanel(lane2Horse, raceLength));
+        panel.add(createPanel(lane3Horse, raceLength));
+
+        JButton closeButton = new JButton("Close");
+        closeButton.addActionListener(e -> dispose());
+        panel.add(closeButton);
+
+        add(panel);
+        setLocationRelativeTo(null);
+        setVisible(true);
+
+
         }
     
         private JPanel createPanel(Horse horse, int raceLength) {
