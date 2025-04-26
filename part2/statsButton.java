@@ -1,4 +1,6 @@
 package part2;
+import java.awt.Dimension;
+
 import javax.swing.*;
 
 import part1.Horse; 
@@ -34,6 +36,10 @@ public class statsButton extends JFrame {
             JPanel horsePanel = new JPanel();
             horsePanel.setLayout(new BoxLayout(horsePanel, BoxLayout.Y_AXIS));
             horsePanel.setBorder(BorderFactory.createTitledBorder(horse.getName()));
+
+            horsePanel.setPreferredSize(new Dimension(500, 200)); 
+            horsePanel.setMaximumSize(new Dimension(500, 200));
+            horsePanel.setMinimumSize(new Dimension(500, 200));
     
             int distance = horse.getDistanceTravelled();
             horsePanel.add(new JLabel("Distance travelled: " + distance + "m"));
