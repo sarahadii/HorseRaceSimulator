@@ -21,7 +21,8 @@ public class MainHorsePage extends JFrame{
         JButton trackDesignButton = new JButton("Track Design");
         trackDesignButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening Track design");
-            new TrackDesign();
+            new TrackDesign().setVisible(true); 
+
         });
         buttonPanel.add(trackDesignButton);
 
@@ -42,17 +43,10 @@ public class MainHorsePage extends JFrame{
         buttonPanel.add(statsButton);
     
 
-        JButton bettingButton = new JButton("Betting system");
-        bettingButton.addActionListener(e -> {
-            JOptionPane.showMessageDialog(null, "Opening betting system");
-            new bettingButton();
-        });
-        buttonPanel.add(bettingButton);
-
         buttonPanel.add(trackDesignButton);
         buttonPanel.add(customizeButton);
         buttonPanel.add(statsButton);
-        buttonPanel.add(bettingButton);
+        
 
         add(buttonPanel, BorderLayout.CENTER);
     }
