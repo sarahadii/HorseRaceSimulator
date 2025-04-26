@@ -16,6 +16,8 @@ import javax.swing.JTextArea;
 import javax.swing.SwingConstants;
 import javax.swing.SwingUtilities;
 
+import part1.Race;
+
 public class TrackDesign extends JFrame{
     JSlider lengthSlider;
     JSlider laneSlider;
@@ -110,12 +112,10 @@ public class TrackDesign extends JFrame{
             int lanes = laneSlider.getValue();
             String shape = shapeGroup.getSelection() != null ? shapeGroup.getSelection().getActionCommand() : "None";
             String conditionValue = (String) condition.getSelectedItem();
-            String message = "Track saved with the following details:\n" +
-                    "Length: " + length + " meters\n" +
-                    "Lanes: " + lanes + "\n" +
-                    "Shape: " + shape + "\n" +
-                    "Condition: " + conditionValue;
+            String message = "Track saved with the following details:\n" +"Length: " + length + " meters\n" +"Lanes: " + lanes + "\n" + "Shape: " + shape + "\n" +"Condition: " + conditionValue;
             JOptionPane.showMessageDialog(this, message, "Track Saved", JOptionPane.INFORMATION_MESSAGE);
+
+            Race race = new Race(length, conditionValue, shape, lanes);
         });
         add(centerPanel, BorderLayout.CENTER);
 

@@ -14,5 +14,7 @@ public class HorseTest {
         h.goBackToStart();
         System.out.println("Distance after going back to start: " + h.getDistanceTravelled());
         System.out.println("Has Fallen: " + h.hasFallen());
+        h.setConfidence(1.5);
+        System.out.println("Confidence after setting to 1.5: " + h.getConfidence());
     }
 }
