@@ -31,6 +31,7 @@ public class horseCustbutton extends JFrame {
     JComboBox<String> symbolBox;
     private JRadioButton arabian, thoroughbred, quarterHorse, appaloosa;
     private JTextField nameField;
+    public static ArrayList<Horse> savedHorses = new ArrayList<>();
 
     public horseCustbutton() {
         setTitle("Horse Customization");
@@ -145,8 +146,7 @@ public class horseCustbutton extends JFrame {
             System.out.println("Horse Breed: " + horse.getBreed());
             System.out.println("Horse Confidence: " + horse.getConfidence());
 
-            List<Horse> saveHorses = new ArrayList<>();
-            saveHorses.add(horse);
+            savedHorses.add(horse);
             System.out.println("Horse saved successfully!");
             });
                     savePanel.add(saveBtn);
