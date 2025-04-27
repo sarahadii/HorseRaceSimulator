@@ -42,7 +42,7 @@ public class statsButton extends JFrame {
             horsePanel.setMinimumSize(new Dimension(500, 200));
 
             String name= horse.getName();
-            horsePanel.add(new JLabel("Horse's ame: " + name));
+            horsePanel.add(new JLabel("Horse's name: " + name));
     
             int distance = horse.getDistanceTravelled();
             horsePanel.add(new JLabel("Distance travelled: " + distance + "m"));
@@ -63,7 +63,7 @@ public class statsButton extends JFrame {
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> {
             // Replace with appropriate constructor arguments
-            Horse dummyHorse = new Horse("Dummy", 0, 0.0); 
+            Horse dummyHorse = new Horse("Dummy","s", 0.0, "Brown", "Thoroughbred"); 
             statsButton frame = new statsButton(dummyHorse, dummyHorse, dummyHorse, 100, dummyHorse);
             frame.setVisible(true);
         });

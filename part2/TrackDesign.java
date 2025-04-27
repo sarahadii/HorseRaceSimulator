@@ -43,13 +43,13 @@ public class TrackDesign extends JFrame{
         JPanel lengthPanel = new JPanel(new BorderLayout());
         JLabel lengthLabel = new JLabel("Length of the track (in meters):");
         lengthSlider = new JSlider(100, 1000, 500);
-        lengthSlider.setMajorTickSpacing(100);
-        lengthSlider.setMinorTickSpacing(10);
-
+        lengthSlider.setMajorTickSpacing(200);
+        lengthSlider.setMinorTickSpacing(40);
+        lengthSlider.setPaintTicks(true);
+        lengthSlider.setPaintLabels(true);
         lengthPanel.add(lengthLabel, BorderLayout.WEST);
         lengthPanel.add(lengthSlider, BorderLayout.CENTER);
-        lengthSlider.setPaintTicks(true);
-        lengthSlider.setPaintTicks(true);
+        
 
         centerPanel.add(lengthPanel, BorderLayout.NORTH);
         add(centerPanel, BorderLayout.CENTER);
@@ -62,6 +62,7 @@ public class TrackDesign extends JFrame{
         lanePanel.add(laneLabel, BorderLayout.WEST);
         lanePanel.add(laneSlider, BorderLayout.CENTER);
         laneSlider.setPaintTicks(true);
+        laneSlider.setPaintLabels(true);
         centerPanel.add(lanePanel, BorderLayout.CENTER);
 
         JPanel conPanel = new JPanel(new BorderLayout());
@@ -115,7 +116,11 @@ public class TrackDesign extends JFrame{
             String message = "Track saved with the following details:\n" +"Length: " + length + " meters\n" +"Lanes: " + lanes + "\n" + "Shape: " + shape + "\n" +"Condition: " + conditionValue;
             JOptionPane.showMessageDialog(this, message, "Track Saved", JOptionPane.INFORMATION_MESSAGE);
 
-            Race race = new Race(length, conditionValue, shape, lanes);
+            Race race = new Race();
+            race.setNumberOfLanes(lanes);
+            race.setRaceLength(length);
+            race.setTrackCondition(conditionValue);
+            race.setTrackShape(shape);
         });
         add(centerPanel, BorderLayout.CENTER);
 

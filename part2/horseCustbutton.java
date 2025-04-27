@@ -15,6 +15,7 @@ import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JScrollPane;
@@ -31,7 +32,6 @@ public class horseCustbutton extends JFrame {
     JComboBox<String> symbolBox;
     private JRadioButton arabian, thoroughbred, quarterHorse, appaloosa;
     private JTextField nameField;
-    public static ArrayList<Horse> savedHorses = new ArrayList<>();
 
     public horseCustbutton() {
         setTitle("Horse Customization");
@@ -76,7 +76,7 @@ public class horseCustbutton extends JFrame {
 
         JPanel symbolPanel = new JPanel(new FlowLayout(FlowLayout.LEFT));
         JLabel symbolLabel = new JLabel("Horse's symbol:");
-        String[] symbols = {"🐎", "🔥", "⭐", "💨", "💎", "🐴", "🌟", "🌈", "💥", "⚡"};
+        String[] symbols = {"🐎", "🔥", "⭐", "💨", "💎", "🐴", "🌟", "🌈", "💥", "⚡","\u1F34B"};
         symbolBox = new JComboBox<>(symbols);
         
         symbolPanel.add(symbolLabel);
@@ -134,20 +134,20 @@ public class horseCustbutton extends JFrame {
             else if (appaloosa.isSelected()) breed = "Appaloosa";
             String color = (String) horseColor.getSelectedItem();
             String symbol = (String) symbolBox.getSelectedItem();
-            String symbolStr = (String) symbolBox.getSelectedItem();
-            char symbolChar = symbolStr.charAt(0);
             double confidence = getConfidenceBreed();
             String name = nameField.getText();
                         
-            Horse horse = new Horse(name, symbolChar, confidence, color, breed);
+            Horse horse = new Horse(name, symbol, confidence, color, breed);
             System.out.println("Horse Name: " + horse.getName());
             System.out.println("Horse Symbol: " + horse.getSymbol());
             System.out.println("Horse Color: " + horse.getColor());
             System.out.println("Horse Breed: " + horse.getBreed());
             System.out.println("Horse Confidence: " + horse.getConfidence());
 
-            
-            System.out.println("Horse saved successfully!");
+            MainHorsePage.savedHorses.add(horse); // add the horse to the list
+
+            String message=("Horse saved successfully!");
+            JOptionPane.showMessageDialog(this, message, "Horse Saved", JOptionPane.INFORMATION_MESSAGE);
             });
                     savePanel.add(saveBtn);
                     centerPanel.add(savePanel);

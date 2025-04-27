@@ -6,6 +6,7 @@ import part1.Horse;
 import java.awt.*;
 import java.util.ArrayList;
 public class MainHorsePage extends JFrame{
+    public static ArrayList<Horse> savedHorses = new ArrayList<>();
     public MainHorsePage(){
         setTitle("Horse Race Simulator");
         setSize(800, 600);
@@ -38,9 +39,14 @@ public class MainHorsePage extends JFrame{
         JButton statsButton = new JButton("Statistics and Analytics");
         statsButton.addActionListener(e -> {
             JOptionPane.showMessageDialog(null, "Opening statistics");
-            Horse dummyHorse = new Horse("Dummy", '!', 0.8, "Brown", "Thoroughbred");
-            Horse dummyHorse2 = new Horse("Dummy2", '!', 0.7, "Black", "Arabian");
-            Horse dummyHorse3 = new Horse("Dummy3", '!', 0.6, "White", "Appaloosa");
+
+            if (savedHorses.size() < 3) {
+                JOptionPane.showMessageDialog(null, "Please add at least 3 horses to view statistics.");
+                return;
+            }
+                Horse dummyHorse = savedHorses.get(0);
+                Horse dummyHorse2 = savedHorses.get(1);
+                Horse dummyHorse3 = savedHorses.get(2);
             statsButton stats = new statsButton(dummyHorse, dummyHorse2, dummyHorse3, 500, dummyHorse);
             stats.setVisible(true);
         });
