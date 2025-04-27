@@ -171,7 +171,7 @@ public class Race
         {
             return false;
         }
-    }
+    }//s
     
     /***
      * Print the race on the terminal
