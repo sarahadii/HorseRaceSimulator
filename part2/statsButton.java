@@ -58,14 +58,4 @@ public class statsButton extends JFrame {
     
             return horsePanel;
         }
-
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            // Replace with appropriate constructor arguments
-            Horse dummyHorse = new Horse("Dummy","s", 0.0, "Brown", "Thoroughbred"); 
-            statsButton frame = new statsButton(dummyHorse, dummyHorse, dummyHorse, 100, dummyHorse);
-            frame.setVisible(true);
-        });
-    }
 }

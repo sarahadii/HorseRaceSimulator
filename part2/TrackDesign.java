@@ -152,11 +152,4 @@ public class TrackDesign extends JFrame{
         preview.setText("Shape: " + shape + "\nLength: " + length + " meters\nLanes: " + lanes + "\nCondition: " + conditionValue + "\nEffect: " + effect);
     }
 
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            TrackDesign frame = new TrackDesign();
-            frame.setVisible(true);
-        });
-    }
-
 }

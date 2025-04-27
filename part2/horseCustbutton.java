@@ -162,12 +162,5 @@ public class horseCustbutton extends JFrame {
                     if (appaloosa.isSelected()) return 0.75;
                     return 0;
                 }
-            
-        public static void main(String[] args) {
-            SwingUtilities.invokeLater(() -> {
-            horseCustbutton frame = new horseCustbutton();
-            frame.setVisible(true);
-        });
-    }
 }
 
