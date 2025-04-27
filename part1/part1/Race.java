@@ -20,6 +20,22 @@ public class Race
     private String trackCondition;
     private String trackShape;
 
+    public void setRaceLength(int raceLength) {
+        this.raceLength = raceLength;
+    }
+
+    public void setNumberOfLanes(int numberOfLanes) {
+        this.numberOfLanes = numberOfLanes;
+    }
+
+    public void setTrackCondition(String trackCondition) {
+        this.trackCondition = trackCondition;
+    }
+
+    public void setTrackShape(String trackShape) {
+        this.trackShape = trackShape;
+    }
+
     /**
      * Constructor for objects of class Race
      * Initially there are no horses in the lanes
@@ -37,6 +53,10 @@ public class Race
         this.trackCondition = trackCondition;
         this.trackShape = trackShape;
     }
+    public Race()
+    {
+    }
+
     
     /**
      * Adds a horse to the race in a given lane
