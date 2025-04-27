@@ -32,6 +32,12 @@ public class Horse
     
 
 
+    public Horse(String string, int i, double d) {
+        //TODO Auto-generated constructor stub
+    }
+
+
+
     public static void main(String[] args) {
        System.out.println("Horse class is ready.");
     }
