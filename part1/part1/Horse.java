@@ -9,7 +9,7 @@ package part1;
 public class Horse
 {
     private String horseName;
-    private char horseSymbol;
+    private String horseSymbol;
     private double horseConfidence;
     private int distanceTravelled;
     private boolean fallen;
@@ -19,7 +19,7 @@ public class Horse
     
       
     //Constructor of class Horse
-    public Horse(String horseName, char horseSymbol, double horseConfidence, String color, String breed)
+    public Horse(String horseName, String horseSymbol, double horseConfidence, String color, String breed)
     {
         this.horseSymbol = horseSymbol;
         this.horseName = horseName;
@@ -31,6 +31,16 @@ public class Horse
     }
     
 
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+
+
+    public void setBreed(String breed) {
+        this.breed = breed;
+    }
 
     public static void main(String[] args) {
        System.out.println("Horse class is ready.");
@@ -58,7 +68,7 @@ public class Horse
         return this.horseName; 
     }
     
-    public char getSymbol()
+    public String getSymbol()
     {
         return this.horseSymbol;   
     }
@@ -89,7 +99,7 @@ public class Horse
         }
     }
     
-    public void setSymbol(char newSymbol)
+    public void setSymbol(String newSymbol)
     {
         this.horseSymbol = newSymbol;  
     }
